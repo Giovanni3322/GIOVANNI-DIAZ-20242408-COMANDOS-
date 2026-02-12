@@ -1,0 +1,48 @@
+
+
+Práctica 1: 
+-----------------------------------------------------------------------------------------
+Actualizar el sistema: sudo dnf update.
+
+Listar repositorios activos: dnf repolist.
+
+Habilitar repositorio CRB (necesario en CentOS 9): sudo dnf config-manager --set-enabled crb.
+
+Instalar repositorio EPEL: sudo dnf install epel-release epel-next-release -y.
+
+Limpiar caché y refrescar: sudo dnf clean all && sudo dnf makecache.
+
+Buscar un paquete: dnf search bashtop.
+
+Instalar herramienta: sudo dnf install bashtop -y.
+
+Desinstalar programa: sudo dnf remove bashtop.
+
+Eliminar dependencias huérfanas: sudo dnf autoremove.
+
+Práctica 2: 
+-----------------------------------------------------------------------------------------
+Se configuran entrando al editor con crontab -e:
+
+Actualización diaria (11 PM): 0 23 * * * dnf update -y.
+
+Reinicio semanal (Domingos 3 AM): 0 3 * * sun /sbin/reboot.
+Programar borrado de temporales: echo "rm -rf /tmp/*" | at now + 1 minute.
+
+Listar contenido: ls /tmp.
+
+Práctica 3: 
+-----------------------------------------------------------------------------------------
+Formatear la partición (ext4): sudo mkfs.ext4 /dev/sdb.
+
+Crear punto de montaje en Escritorio: mkdir ~/Desktop/disco_nuevo.
+
+Montar el disco: sudo mount /dev/sdb ~/Desktop/disco_nuevo.
+
+Crear archivo de evidencia: touch ~/Desktop/disco_nuevo/AdrianAlcantara.txt.
+
+Desmontar la unidad: sudo umount /dev/sdb.
+
+Remontar en directorio de sistema: sudo mount /dev/sdb /mnt.
+
+Verificar persistencia: ls /mnt.
