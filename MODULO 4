@@ -1,0 +1,20 @@
+Práctica 1: Servidor HTTP (Apache)
+
+sudo dnf install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo firewall-cmd --permanent --add-port=80/tcp
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --reload
+sudo mkdir -p /var/www/sitio1
+sudo mkdir -p /var/www/sitio2
+sudo nano /etc/httpd/conf.d/mis_sitios.conf
+sudo systemctl restart httpd
+
+Práctica 2: Servidor de Correos (Postfix)
+
+sudo dnf install postfix s-nail -y
+sudo systemctl start postfix
+sudo systemctl enable postfix
+echo
+mail -s
